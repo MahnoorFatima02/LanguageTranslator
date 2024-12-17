@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Translation App</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <h1>Enter Your Text For Translation</h1>
+        <form id="textForm" method="POST">
+            <label for="text_input">Text:</label>
+            <input type="text" id="text_input" name="text_input" required>
+            <button type="button" onclick="getTranslation()">Submit</button>
+        </form>
+        <div id="loadingSpinner">
+            <div class="spinner"></div>
+        </div>
+        <div id="response"></div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>
