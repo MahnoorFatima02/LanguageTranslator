@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from transformers import pipeline
+import os
+
 
 app = Flask(__name__)
 
@@ -15,5 +17,10 @@ def submit():
     translated_text = translator(data)
     return jsonify({"translated_text": translated_text[0]["translation_text"]})
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Get port from Render's environment
+    app.run(host="0.0.0.0", port=port, debug=True)  # Bind to all network interfaces
+
