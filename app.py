@@ -25,6 +25,6 @@ def submit():
 #     app.run(debug=True)
 
 if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))  # Get port from Render's environment
+    port = int(os.environ.get("PORT", 10000))  # Get port from Render's environment
     app.run(host="0.0.0.0", port=port, debug=True)  # Bind to all network interfaces
 
